@@ -10,3 +10,13 @@
 
 // Because nums[0] + nums[1] = 2 + 7 = 9,
 // return [0, 1].
+
+const twoSum = (nums, target) => {
+  for (let i = 0; i < nums.length-1; i++){
+    let int1 = nums[i];
+    for (let j = i+1; j < nums.length; j++){
+      let int2 = nums[j];
+      if (int1 + int2 === target) return [i, j];
+    }
+  }
+}
