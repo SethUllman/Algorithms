@@ -32,3 +32,11 @@ const twoSum = (nums, target) => {
 // Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 // Output: 7 -> 0 -> 8
 // Explanation: 342 + 465 = 807.
+
+const addTwoNumbers = (list1, list2) => {
+  const newList = [];
+  for (let i = 0; i < list1.length; i++){
+    newList.push(list1[i] + list2[i]);
+  }
+  return newList;
+}
