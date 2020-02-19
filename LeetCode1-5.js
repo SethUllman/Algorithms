@@ -39,6 +39,12 @@ var ListNode = function (val) {
 }
 
 var addTwoNumbers = function (l1, l2) {
-
+  let current1 = l1;
+  let current2 = l2;
+  let newTree = null;
+  while (current1.next && current2.next){
+    newTree = ListNode(current1.val + current2.val);
+    
+  }
   return newList;
 };
