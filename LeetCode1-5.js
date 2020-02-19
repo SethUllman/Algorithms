@@ -33,6 +33,12 @@ const twoSum = (nums, target) => {
 // Output: 7 -> 0 -> 8
 // Explanation: 342 + 465 = 807.
 
-const addTwoNumbers = (list1, list2) => {
-  
+var ListNode = function (val) {
+  this.val = val;
+  this.next = null;
 }
+
+var addTwoNumbers = function (l1, l2) {
+
+  return newList;
+};
