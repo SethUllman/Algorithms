@@ -41,10 +41,13 @@ var ListNode = function (val) {
 var addTwoNumbers = function (l1, l2) {
   let current1 = l1;
   let current2 = l2;
-  let newTree = null;
+  let newTree = ListNode(current1.val + current2.val);
+  let nextNode = newTree;
   while (current1.next && current2.next){
-    newTree = ListNode(current1.val + current2.val);
-    
+    nextNode = nextNode.next;
+    current1 = current1.next;
+    current2 = current2.next;
+    nextNode.val = ListNode(current1.val + current2.val);
   }
-  return newList;
+  return newTree;
 };
