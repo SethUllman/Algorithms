@@ -14,9 +14,11 @@
 
 
 def twoSum(nums, target):
+  results = []
   for i in range(len(nums)):
-    print(i)
+    for j in range(len(nums)-1):
+      if ()
+  
 
-
-print(twoSum([1,2,3,4], 8))
+print(twoSum([5,10,2,4], 8))
     
