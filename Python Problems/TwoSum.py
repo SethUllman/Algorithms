@@ -12,11 +12,11 @@
 # Because nums[0] + nums[1] = 2 + 7 = 9,
 # return [0, 1].
 
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        
+
+def twoSum(nums, target):
+  for i in range(len(nums)):
+    print(i)
+
+
+print(twoSum([1,2,3,4], 8))
+    
