@@ -10,3 +10,13 @@ function highAndLow(numbers) {
   });
   return `${highest} ${lowest}`
 }
+
+function friend(friends) {
+  let filteredFriends = [];
+
+  friends.forEach((friend) => {
+    if (friend.length === 4) filteredFriends.push(friend);
+  });
+
+  return filteredFriends;
+}
