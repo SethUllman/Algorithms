@@ -14,12 +14,13 @@
 
 
 def twoSum(nums, target):
-  results = []
-  for i in range(len(nums)):
-    for j in range(len(nums)-1):
-      if nums[i] + nums[j] == target and i > j:
-        results.append([nums[i], nums[j]])
-  return results
+  h = {}
+  for i, num in enumerate(nums):
+    result = target - num
+    if result not in h:
+      h[num] = i
+    else:
+      return [h[result], i]
 
 print(twoSum([5,10,3,4], 8))
     
