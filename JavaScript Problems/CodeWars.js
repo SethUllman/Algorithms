@@ -20,3 +20,10 @@ function friend(friends) {
 
   return filteredFriends;
 }
+
+function validatePIN(pin) {
+  //return true or false
+  if ((pin.length === 4 || pin.length === 6) && pin >= 0 && pin % 1 === 0) return true;
+
+  return false;
+}
