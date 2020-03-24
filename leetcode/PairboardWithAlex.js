@@ -72,36 +72,7 @@ class Node {
   }
 }
 
-// if root.left & root.right are x and y => false because they share a parent
-// 
 
-var isCousins = function (root, x, y) {
-  if (!root ) return false;  //return false if no root
-
-  if (root.left && root.right) {
-    if ((root.left.val == x && root.right.val == y) || (root.right.val == x && root.left.val == y)) {
-      return false; //return false if same parent
-    } 
-  }
-  
-  
-  if (!root.left && !root.right) { // on the last node
-    if (root.val === x || root.val === y) {
-      // root has one of the values
-      return true;
-    } else {
-      // root is not x or y
-      return false;
-    }
-  }
-  let left;
-  if (root.left) left = isCousins(root.left, x, y);
-  let right;
-  if (root.right) right = isCousins(root.right, x, y);
-
-  if ((left == true && right == false) || (left == false && right == true)) return false;
-  if (left == true && right == true) return true;
-};
 
 // # Recursive function to find level of Node 'ptr' in
 // # a binary tree
@@ -160,36 +131,4 @@ const level = (root, ptr, lvl) => {
   return level(root.right, ptr, lvl + 1);
 }
 
-// def level(root, ptr, lev):
 
-//   # Base Case
-//   if root is None:
-//   return 0
-//   if root == ptr:
-//     return lev
-
-//   # Return level if Node is present in left subtree
-//   l = level(root.left, ptr, lev + 1)
-//   if l != 0:
-//     return l
-
-//   # Else search in right subtree
-//   return level(root.right, ptr, lev + 1) 
-
-/*
-       1
-null      2
-        3    5
-*/
-
-
-// def isSibling(root, a, b):
-
-//   # Base Case
-//   if root is None:
-//   return 0
-
-//   return ((root.left == a and root.right == b) or
-//     (root.left == b and root.right == a)or
-//   isSibling(root.left, a, b) or
-//   isSibling(root.right, a, b)) 
