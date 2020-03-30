@@ -45,3 +45,54 @@
 # Input: "MCMXCIV"
 # Output: 1994
 # Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+
+def roman_to_int(s)
+    total = 0
+    nums = s.split('')
+    
+    i = 0
+    while i < nums.length do
+       if nums[i] == 'I' && nums[i+1] == 'V'
+           total += 4
+           i += 2
+       elsif nums[i] == 'I' && nums[i+1] == 'X'
+           total += 9
+           i += 2
+       elsif nums[i] == 'X' && nums[i+1] == 'L'
+           total += 40
+           i += 2
+       elsif nums[i] == 'X' && nums[i+1] == 'C'
+           total += 90
+           i += 2
+       elsif nums[i] == 'C' && nums[i+1] == 'D'
+           total += 400
+           i += 2
+       elsif nums[i] == 'C' && nums[i+1] == 'M'
+           total += 900
+           i += 2
+       elsif nums[i] == 'I'
+           total += 1
+           i += 1
+       elsif nums[i] == 'V'
+           total += 5
+           i += 1
+       elsif nums[i] == 'X' 
+           total += 10
+           i += 1
+       elsif nums[i] == 'L'
+           total += 50
+           i += 1
+       elsif nums[i] == 'C'
+           total += 100
+           i += 1
+       elsif nums[i] == 'D'
+           total += 500
+           i += 1
+       elsif nums[i] == 'M'
+           total += 1000
+           i += 1
+       end
+    end
+    
+    total
+end
