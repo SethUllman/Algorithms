@@ -18,5 +18,21 @@
 # @param {String[]} strs
 # @return {String}
 def longest_common_prefix(strs)
-    
+    prefix = ""
+    return prefix if strs.length == 0
+    strs[0].length.times do |i|
+      matching = true;
+      current_char = strs[0][i]
+      strs.each do |string|
+        if current_char != string[i] then
+          matching = false
+        end
+      end
+      if matching then
+        prefix << current_char
+      else 
+        return prefix
+      end
+    end
+    prefix
 end
