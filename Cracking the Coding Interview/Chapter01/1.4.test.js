@@ -1,0 +1,1 @@
+const PalindromePermutation = require('./1.4');
