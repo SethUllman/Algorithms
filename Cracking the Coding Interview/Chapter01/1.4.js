@@ -8,7 +8,7 @@
 //Output:  True (permutations: "taco cat", "atco cta", etc)
 
 function PalindromePermutation(string){
-
+  
 }
 
 module.exports = PalindromePermutation;
