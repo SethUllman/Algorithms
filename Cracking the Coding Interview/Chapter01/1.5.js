@@ -9,8 +9,8 @@
 //pale, bale => true
 //pale, bake => false
 
-const oneAway = (string) => {
-
+const oneAway = (str1, str2) => {
+  
 }
 
 module.exports = oneAway;
