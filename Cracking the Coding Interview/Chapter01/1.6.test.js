@@ -1,0 +1,1 @@
+const stringCompression = require('./1.6');
