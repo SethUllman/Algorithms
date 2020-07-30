@@ -3,7 +3,17 @@
 //Can you do this in place?
 
 const rotateMatrix = (image) => {
+  let rotated = [];
 
+  for(let i = 0; i < image.length; i++){
+    let row = [];
+    for(let j = image[i].length-1; j >= 0; j--){
+      row.push(image[j][i]);
+    }
+    rotated.push(row);
+  }
+
+  return rotated;
 }
 
 module.exports = rotateMatrix;
