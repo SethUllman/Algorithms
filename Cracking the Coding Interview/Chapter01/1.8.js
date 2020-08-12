@@ -22,7 +22,6 @@ const zeroMatrix = matrix => {
       }
     }
   }
-  console.log(matrix);
   return matrix;
 }
 
