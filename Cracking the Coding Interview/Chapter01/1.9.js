@@ -4,7 +4,19 @@
 
 const stringRotation = (s1, s2) => {
   if(s1.length != s2.length) return false;
-  return true;
+  let string1 = s1;
+
+  for (let i = 0; i < s1.length; i++){
+    if (string1 != s2) {
+      string1 = string1.split('');
+      string1.push(string1.shift());
+      string1 = string1.join('');
+    } else {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 module.exports = stringRotation;

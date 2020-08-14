@@ -6,7 +6,7 @@ test('expect stringRotation(cow, woc) to return true', () => {
 });
 
 test('expect stringRotation(image, iagem) to return false', () => {
-  expect(stringrotation('image', 'iagem')).not.toBeNull();
+  expect(stringRotation('image', 'iagem')).not.toBeNull();
   expect(stringRotation('image', 'iagem')).toBeFalsy();
 });
 
