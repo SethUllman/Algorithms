@@ -3,7 +3,8 @@
 //of s1 using only one call to isSubstring(e.g.,"waterbottle" is a rotation of "erbottlewat").
 
 const stringRotation = (s1, s2) => {
-
+  if(s1.length != s2.length) return false;
+  return true;
 }
 
 module.exports = stringRotation;
