@@ -29,19 +29,13 @@ test('expect Node.next to return the next value', () => {
 })
 
 test('expect removeDups to remove duplicates from list', () => {
-  const linkedList1 = {
-    value: 1, next: {
-      value: 2, next: {
-        value: 1, next: {
-          value: 3, next: {
-            value: 2, next: {
-              value: 3, next: null
-            }
-          }
-        }
-      }
-    }
-  };
+
+  const linkedList1 = new ListNode(1);
+  linkedList1.next = new ListNode(2);
+  linkedList1.next.next = new ListNode(1);
+  linkedList1.next.next.next = new ListNode(3);
+  linkedList1.next.next.next.next = new ListNode(2);
+  linkedList1.next.next.next.next.next = new ListNode(3);
 
   const linkedList2 = {
     value: 1, next: {
