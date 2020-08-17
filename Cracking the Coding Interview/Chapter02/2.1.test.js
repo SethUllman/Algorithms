@@ -7,6 +7,12 @@ class ListNode {
   }
 }
 
+class LinkedList {
+  constructor(head) {
+    this.head = head;
+  }
+}
+
 
 test('expect ListNode to be a ListNode', () => {
   const node1 = {
@@ -36,6 +42,8 @@ test('expect removeDups to remove duplicates from list', () => {
   linkedList1.next.next.next = new ListNode(3);
   linkedList1.next.next.next.next = new ListNode(2);
   linkedList1.next.next.next.next.next = new ListNode(3);
+
+  const linkedList = new LinkedList(linkedList1);
 
   const linkedList2 = {
     value: 1, next: {
