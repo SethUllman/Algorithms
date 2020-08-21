@@ -7,7 +7,20 @@
 //result: nothing is returned, but the new linked list looks like a => b => d => e => f
 
 const deleteMiddleNode = (node) => {
-  node.value = 100;
+  let currentNode = node;
+  let nextNode = node.next;
+
+  while(nextNode != null){
+    currentNode.value = nextNode.value;
+    currentNode.next = nextNode.next;
+    currentNode = currentNode.next;
+    if(nextNode.next == null){
+      currentNode.next = null;
+      break;
+    }
+
+    nextNode = currentNode.next;
+  }
 }
 
 module.exports = deleteMiddleNode;
