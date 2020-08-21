@@ -7,7 +7,7 @@
 //result: nothing is returned, but the new linked list looks like a => b => d => e => f
 
 const deleteMiddleNode = (node) => {
-
+  node.value = 100;
 }
 
 module.exports = deleteMiddleNode;
