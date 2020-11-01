@@ -26,32 +26,34 @@
 # 1 <= s.length <= 1000
 # s consist of only digits and English letters (lower-case and/or upper-case),
 
-def longestPalindrome(self, s):
-  """
-  :type s: str
-  :rtype: str
-  """
+class Solution(object):
+  def longestPalindrome(self, s):
+  
+    # self variables for longest length and it's starting point
+    self.longestLength = 0
+    self.startingPoint = 0
 
-  return (s if len(s) == 1)
+    # iterate through s
+    for i in range(len(s)):
 
-  #variables to keep track of longest current palindromic substring
+    #run helper method with each possible starting point in s
+      self.expandFromMiddle(s, i, i)
+      self.expandFromMiddle(s, i, i+1)
 
-  longest_current = s[0]
+    #return substring of length longest length starting at starting point
+    return s[self.startingPoint:self.startingPoint + self.longestLength]
 
-  #nested for loop to find substrings
+  def expandFromMiddle(self, s, l, r):
+    #check if s[l] == s[r] and if l and r are still in bounds
+    while (l > -1 and r < len(s) and s[l] == s[r]):
+    #if yes, l-=1 and r+=1 
+      l -= 1
+      r += 1
 
-  for i in range(0, len(s)-1):
-    for j in range(i, len(s)):
-      current = s[i:j]
-
-      #update longest current palindromic substring if current == reverse(current) and len(current) > longest current
-
-      if(current[::-1] == current and len(current) > len(longest_current)):
-        longest_current = current
-
-
-
-  #return longest current
-
-  return longest_current
+    #if palindrome is longer than current longest, adjust self variables
+    if(r-l-1 > self.longestLength):
+      self.longestLength = r-l-1
+      self.startingPoint = l+1
+    
+    
         
