@@ -47,6 +47,7 @@
 # 0 <= s.length <= 200
 # s consists of English letters (lower-case and upper-case), digits, ' ', '+', '-' and '.'.
 import string
+import math
 def myAtoi(self, s: str) -> int:
       
   no_white = []
@@ -104,7 +105,7 @@ def myAtoi(self, s: str) -> int:
     return 0
 
   if is_float == True:
-    new_num = floor(float("".join(no_white)))
+    new_num = math.floor(float("".join(no_white)))
   else:
     new_num = int("".join(no_white))
     
