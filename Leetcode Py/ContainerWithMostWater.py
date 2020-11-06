@@ -34,7 +34,7 @@
 # 2 <= n <= 3 * 104
 # 0 <= height[i] <= 3 * 104
 
-
+from typing import List
 def maxArea(self, height: List[int]) -> int:
   #strategy
   #iterate from front and back of the list, calculating area from the shortest of the two
