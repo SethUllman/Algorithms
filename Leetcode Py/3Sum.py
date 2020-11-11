@@ -25,7 +25,7 @@
 # 0 <= nums.length <= 3000
 # -105 <= nums[i] <= 105
 from typing import List
-def threeSum(self, nums: List[int]) -> List[List[int]]:
+def threeSum(self, nums: List[int]):
   if len(nums) < 3:
     return []
 
