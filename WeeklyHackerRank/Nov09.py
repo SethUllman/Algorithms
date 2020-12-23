@@ -38,3 +38,48 @@ def checkCompress(string):
       matching = False
   
   return matching
+
+# ------------------------------------------------------------------------------
+
+# Weight Capacity
+import itertools
+def weightCapacity(weights, maxCapacity): #([4, 8, 5, 9], 20) Output = 18
+
+
+  combos = itertools.combinations(weights, 2)
+  y = [" ".join(i) for i in combos]
+
+  print(y)
+
+# ------------------------------------------------------------------------------
+
+# count Counterfeit
+
+def countCounterfeit(serialNumbers):
+  validSum = 0
+  uppers = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+  for serialNumber in serialNumbers:
+    #check last char for Uppercase letter
+    if serialNumber[-1] not in uppers: continue
+    serialNumber = serialNumber[0:-1]
+    #check first three for unique uppercase letters
+    if not isUnique(serialNumber[0:3]): continue
+    serialNumber = serialNumber[3:-1]
+    #check serialNumber[3:7] is between 1900 and 2019
+    if not int(serialNumber[0:4]) in range(1900, 2019): continue
+    serialNumber = serialNumber[4:-1]
+    #add bill amount to validSum if all true
+    validSum += int(serialNumber)
+
+  return validSum
+
+def isUnique(str):
+
+  found = []
+  for char in str:
+    if char in found:
+      return False
+    else:
+      found.append(char)
+
+  return True
