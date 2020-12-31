@@ -32,3 +32,22 @@
 // Turn out int into a string -> Reverse the string -> parseInt(string) = reversed int
 
 // Return int * -1
+
+const reverseInteger = (int) => {
+
+  if (int > -10 && int < 10) return int;
+
+  const negative = int <= 0;
+
+  let string = int.toString().reverse();
+  let reversedInt = parseInt(string);
+
+  if(reversedInt > 2 ** (31 - 1)) return 0; // Math.pow(2,31-1)
+
+  if (negative) {
+    return reversedInt * -1;
+  } else {
+    return reversedInt
+  }
+
+}
