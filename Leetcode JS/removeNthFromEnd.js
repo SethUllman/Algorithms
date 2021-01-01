@@ -41,3 +41,32 @@ var removeNthFromEnd = function (head, n) {
   return head;
 
 };
+
+//-method 2: Two Pointers-
+//maintain two pointers as you traverse the list, with one pointer leading and the other following n nodes behind
+//when the leading pointer reaches the end you need to alter the trailing pointers next to skip the next node and attach to the one following
+//return the head
+//Time 2O(n)
+//Space O(1)
+
+var removeNthFromEnd = function (head, n) {
+  if (!head.next) return head.next;
+
+  let pointer1 = head, pointer2 = head;
+  let index1 = 0, index2 = 0;
+
+  while (pointer2.next) {
+    if (index1 == index2 - n) {
+      pointer1 = pointer1.next;
+      index1++;
+    }
+    pointer2 = pointer2.next;
+    index2++;
+
+
+  }
+
+  if (index2 - index1 < n) return head.next;
+  pointer1.next = pointer1.next.next
+  return head
+};
