@@ -44,3 +44,43 @@
 // board.length == 9
 // board[i].length == 9
 // board[i][j] is a digit or '.'.
+
+const isValidSudoku = (board) => {
+  let box1 = [], box2 = [], box3 = [];
+
+  for (let i = 0; i < board.length; i++) {
+    let row = board[i];
+    let found = [];
+    for (let j = 0; j < 9; j++) {
+      if (row[j] == ".") continue;
+      if (found.includes(row[j])) return false;
+      found.push(row[j]);
+
+      if (j <= 2) {
+        if (box1.includes(row[j])) return false;
+        box1.push(row[j]);
+      } else if (j >= 3 && j <= 5) {
+        if (box2.includes(row[j])) return false;
+        box2.push(row[j]);
+      } else if (j >= 6) {
+        if (box3.includes(row[j])) return false;
+        box3.push(row[j]);
+      }
+    }
+    if (i == 2 || i == 5) {
+      box1 = [];
+      box2 = [];
+      box3 = [];
+    }
+
+    for (let x = 0; x < 9; x++) {
+      let found = [];
+      for (let y = 0; y < 9; y++) {
+        if (found.includes(board[y][x])) return false;
+        if (board[y][x] != ".") found.push(board[y][x]);
+      }
+    }
+  }
+
+  return true;
+}
