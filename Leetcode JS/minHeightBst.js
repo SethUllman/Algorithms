@@ -10,3 +10,42 @@
 // A bst is valid if and only if all of its nodes are valid BST nodes.BST
 // Note that the bst class already has an insert method which you can use if you WebAuthentication.
 
+function minHeightBst(array) { // [1,2,5,7]
+  if (array.length == 0) return;
+  if (array.length == 1) return new BST(array[0])
+
+  Find the middle integer in array and create head node
+  Let mid = Math.floor(array.length / 2);
+  Head = new BST(array[mid]);
+  Left = minHeightsBst([array.slice(0, mid);
+  Right = minHeightsBst(array.slice(mid + 1));
+
+  If(Left) Head.left = left;
+  If(Right) Head.right = right;
+
+  Return Head;
+}
+
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+
+  insert(value) {
+    if (value < this.value) {
+      if (this.left === null) {
+        this.left = new BST(value);
+      } else {
+        this.left.insert(value);
+      }
+    } else {
+      if (this.right === null) {
+        this.right = new BST(value);
+      } else {
+        this.right.insert(value);
+      }
+    }
+  }
+}
